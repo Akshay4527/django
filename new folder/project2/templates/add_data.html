@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+{% extends "base.html" %}
+{% block body_block %}
+{% if user.is_authenticated %}
+{{user.username}}
+<form method="post">
+    {% csrf_token %}
+    email:<input type="text" name="email">
+    emp_id:<input type="text" name="emp_id">
+    company:<input type="text" name="company">
+    desigination:<input type="text" name="desigination">
+    place:<input type="text" name="place">
+    salary:<input type="text" name="salary">
+    <input type="submit" value="Add data"> 
+</form>
+{% endif %}
+{% endblock %}
+
+</body>
+</html>

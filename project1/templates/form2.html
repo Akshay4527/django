@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Page Title</title>
+</head>
+<body>
+<form method='post'>
+    {% csrf_token %}
+    <label>Name</lable>
+    <input type="text" name="name">
+    <label>Age</lable>
+    <input type="text" name="age">
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>

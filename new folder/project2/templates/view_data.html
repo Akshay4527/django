@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <h2 style="text-align: center;"><u>Employee Details</u></h2>
+        <table border="1px solid black"; style="margin: auto;background-color:rgb(235, 215, 159)">
+       <tr>
+        <th>email</th>
+        <th>emp_id</th>
+        <th>company</th>
+        <th>desigination</th>
+        <th>place</th>
+        <th>salary</th>
+       </tr>
+       {% for i in s %}
+       <tr>
+    
+             <td>   {{i.email}}</td>
+             <td> {{i.emp_id}}</td>
+             <td> {{i.company}}</td>
+             <td> {{i.desigination}}</td>
+             <td>  {{i.place}}</td>
+             <td> {{i.salary}}</td>
+             <td><button style="background-color:rgb(235, 215, 159) ; color: black;"><a href="{% url 'view_item' i.pk %}" >View</a></button></td>
+             <td><button style="background-color:rgb(235, 215, 159) ; color: black;"><a href="{% url 'edit_item' i.pk %}" >Edit</a></button></td>
+             <td><button style="background-color:rgb(235, 215, 159) ; color: black;"><a href="{% url 'delete_item' i.pk %}" >Delete</a></button></td>
+             
+             
+       </tr>
+       {% endfor %}
+      
+      </table>
+      
+    </body>
+</html>
+
+
+
